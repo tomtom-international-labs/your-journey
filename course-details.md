@@ -1,9 +1,15 @@
-This is the description we show on the course page [here](https://lab.github.com/tomtom-international-labs/your-journey). This first paragraph will be featured at the top of the page so make it great.
-​
+Welcome to your TomTom Maps APIs journey!
 
-​
-Be sure to tell the learner about the technology you are teaching, why they should learn it, how they can use it, and what you will teach them.
-​
+In this tutorial we will learn how to add easily a map in your website, present and display traffic information, get acquainted with the Reverse Geocoding process, build routes and use the search API to fetch locations along a Route.
 
+For this tutorial will be using the TomTom Maps SDK for Web, which is based in Javascript.
 
-Include information on how they can reach you for questions about the content or course. 
+Documentation can be read here : https://developer.tomtom.com/maps-sdk-web-js/documentation
+
+If you have questions, please contact us in our forum! https://devforum.tomtom.com/
+
+Enjoy!
+
+Att,
+
+The TomTom Developer Portal
