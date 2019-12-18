@@ -3,31 +3,42 @@ tagline: Learn to use the TomTom Maps SDK for Web
 description: Learn to use the TomTom Maps SDK for Web to add location to your apps
 template:
   repo: your-journey-template
-  name: your-journey
-before:
-  - type: createIssue
-    title: Welcome!
-    body: new-issue.md
+  name: my-tomtom-maps-journey
 steps:
   - title: Getting your API KEY
-    description: The first step in your course is to get your API KEY from developer.tomtom.com
-    event: issues.assigned
+    description: >-
+      The first step in your course is to get your API KEY from
+      developer.tomtom.com
+    event: issues.closed
     link: 'https://developer.tomtom.com'
     actions:
-      - type: closeIssue
+      - type: createPullRequest
   - title: Add a map to your website
     description: How to add a simple map view into your project.
     actions:
+      - type: createPullRequest
+    event: issues
   - title: Show traffic in your map
     description: How to add a simple trafic flow layer
     actions:
+      - type: createPullRequest
   - title: Click click and here is the address
     description: How to use the Reverse Geocoding from the Search API
     actions:
+      - type: createPullRequest
   - title: We are talking a walk
     description: Using the Routing API we are going to build pedestrian routes
     actions:
+      - type: createPullRequest
   - title: Let us get Coffee!
-    description: Using the search along the route, we get Point of interests that are around our route.
+    description: >-
+      Using the search along the route, we get Point of interests that are
+      around our route.
     actions:
-    
+      - type: createPullRequest
+  - title: Congratulations!
+    actions:
+      - type: createIssue
+        title: A new issue
+        body: a-response-file.md
+    description: You have finish this tutorial!
