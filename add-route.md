@@ -1,0 +1,1 @@
+Between click on the map, we are going to create a Pedestrian Route.

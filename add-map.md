@@ -1,0 +1,1 @@
+Now we are going to add a simple map view in our application.
