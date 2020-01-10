@@ -4,64 +4,91 @@ description: Learn to use the TomTom Maps SDK for Web to add location to your ap
 template:
   repo: your-journey-template
   name: my-tomtom-maps-journey
+before:
+  - type: updateBranchProtection
+  - type: createIssue
+    title: Add API KEY
+    body: new-issue.md
+    action_id: add_api_key_action
 steps:
   - title: Getting your API KEY
     description: >-
       The first step in your course is to get your API KEY from
       developer.tomtom.com
-    event: pull_request.assigned
-    link: 'https://developer.tomtom.com'
+    event: issues.closed
+    link: '{{ repoUrl }}'
     actions:
+      - type: gate
+        left: '%payload.issue.title%'
+        right: Add API KEY
       - type: createPullRequest
         title: Add API KEY
         body: add-key.md
-        head: master
+        head: add-api-key
   - title: Add a map to your website
     description: How to add a simple map view into your project.
-    event: pull_request.assigned
+    event: pull_request.closed
     actions:
+      - type: gate
+        left: '%payload.pull_request.title%'
+        right: Add API KEY
       - type: createPullRequest
         title: Add Map
         body: add-map.md
-        head: master
+        head: add-map
   - title: Show traffic in your map
     description: How to add a simple trafic flow layer
-    event: pull_request.assigned
+    event: pull_request.closed
     actions:
+      - type: gate
+        left: '%payload.pull_request.title%'
+        right: Add Map
       - type: createPullRequest
         title: Add Traffic
         body: add-traffic.md
-        head: master
+        head: add-traffic
   - title: Click click and here is the address
     description: How to use the Reverse Geocoding from the Search API
-    event: pull_request.assigned
+    event: pull_request.closed
     actions:
+      - type: gate
+        left: '%payload.pull_request.title%'
+        right: Add Traffic
       - type: createPullRequest
         title: Add Reverse Geocoding
         body: add-reverse-geocoding.md
-        head: master
+        head: add-reverse-geocoding
   - title: We are talking a walk
     description: Using the Routing API we are going to build pedestrian routes
-    event: pull_request.assigned
+    event: pull_request.closed
     actions:
+      - type: gate
+        left: '%payload.pull_request.title%'
+        right: Add Reverse Geocoding
       - type: createPullRequest
         title: Create Route
         body: add-route.md
-        head: master
+        head: add-route
   - title: Let us get Coffee!
     description: >-
       Using the search along the route, we get Point of interests that are
       around our route.
-    event: pull_request.assigned
+    event: pull_request.closed
     actions:
+      - type: gate
+        left: '%payload.pull_request.title%'
+        right: Create Route
       - type: createPullRequest
         title: Search Along Route
         body: add-search.md
-        head: master
+        head: add-search
   - title: Congratulations!
-    event: pull_request.assigned
+    event: pull_request.closed
     actions:
+      - type: gate
+        left: '%payload.pull_request.title%'
+        right: Search Along Route
       - type: createIssue
-        title: A new issue
-        body: a-response-file.md
+        title: Congratulations !
+        body: end.md
     description: You have finish this tutorial!
